@@ -23,7 +23,11 @@
                 .then(res => res.json())
             //    .then(res => JSON.stringify(res))
                 .then(res => {
-                    document.querySelector('#resposta').innerHTML = res.preco;
+                    document.querySelector('#resposta').innerHTML = 
+                    `<table style="border: 1px solid;paddin 5px;">
+                        <tr><td>ID     </td><td>Descricao   </td><td>Preco    </td></tr>
+                        <tr style="border: 1px solid;" ><td>${res.id}</td><td>${res.descricao}</td><td>${res.preco}</td></tr>
+                    </table>` ;                          
                 });
 
         }
