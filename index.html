@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Requisição e Resposta</h1>
-    <button type="button" id="btnFetch">Fetch</button>
+    <button type="button" id="btnFetch" onclick="getData()" >Buscar dados</button>
     <div id="resposta"></div>
 
     <script>
@@ -18,7 +18,7 @@
             }
         });
 
-        document.querySelector('#btnFetch').addEventListener('click', () => {
+       function getData() {
             fetch(req)
                 .then(res => res.json())
             //    .then(res => JSON.stringify(res))
@@ -26,7 +26,7 @@
                     document.querySelector('#resposta').innerHTML = res.preco;
                 });
 
-        })
+        }
     </script>
 </body>
 </html>
